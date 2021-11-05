@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Welcome to our bookstore!");
             System.out.println("Press 1: User Login");
             System.out.println("Press 2: Register Account");
-            System.out.println("Press 2: Exit bookstore \n");
+            System.out.println("Press 2: Exit Bookstore \n");
 
             int loginType = scanner.nextInt();
             scanner.nextLine();
@@ -48,12 +48,33 @@ public class Main {
                                 int book_ID = scanner.nextInt();
                                 scanner.nextLine();
                                 dao.showBookDetails(book_ID);
+                                System.out.println("Press 1 to buy, Press 2 to cancel");
+                                int buyOp = scanner.nextInt();
+                                scanner.nextLine();
+                                if(buyOp == 1){
+                                    dao.addShopCart(book_ID,user.getUserId());
+                                }
+                                else if (buyOp == 2) {
+                                    System.out.println("Canceled. Not added to cart.");
+                                }
+                                else {
+                                    System.out.println("You entered invalid option");
+                                }
                                 break;
                             case 2:
+                                System.out.println("Shopping Cart: ");
+                                dao.viewCart(user.getUserId());
+                                System.out.println("Enter 0 to purchase all, or enter Cart ID to cancel an item: ");
+                                int purOp = scanner.nextInt();
+                                if (purOp != 0 ) {
+                                    dao.cancelBook(purOp);
+                                } else
+                                    System.out.println("Your order is placed. Thank you.");
                                 break;
                             case 3:
                                 user_portal = false;
                                 System.out.println("Logging out");
+                                break;
                             default:
                                 System.out.println("Select 1-3.");
                         }

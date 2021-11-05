@@ -99,10 +99,10 @@ public class BookStoreDaoImpl implements BookStoreDao{
     preparedStatement.setInt(1, userId);
     ResultSet resultSet = preparedStatement.executeQuery();
         if(resultSet.next()){
-            System.out.format("%-18s%-50s%-20s%-11s\n", "ISBN", "TITLE", "AUTHOR", "PRICE");
-            System.out.format("%-18s%-50s%-20s%-11s\n", resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getDouble(4));
+            System.out.format("%-18s%-70s%-20s%-11s\n", "Cart ID", "TITLE", "AUTHOR", "PRICE");
+            System.out.format("%-18s%-70s%-20s%-11s\n", resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getDouble(4));
             while(resultSet.next()){
-                System.out.format("%-18s%-50s%-20s%-11s\n", resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getDouble(4));
+                System.out.format("%-18s%-70s%-20s%-11s\n", resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getDouble(4));
             }
         }else{
             System.out.println("No items found in your shopping cart");
