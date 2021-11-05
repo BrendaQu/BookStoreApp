@@ -8,8 +8,9 @@ import java.util.ResourceBundle;
 public class ConnectionFactory {
     private static Connection connection = null;
 
-    private Connection ConnectionFactory(){
-        public static Connection getConnection() {
+    private ConnectionFactory(){}
+
+    public static Connection getConnection() {
             if(connection == null){
                 ResourceBundle bundle = ResourceBundle.getBundle("com/company/dbConfig");
                 String url = bundle.getString("url");
@@ -24,4 +25,4 @@ public class ConnectionFactory {
             return connection;
         }
     }
-}
+

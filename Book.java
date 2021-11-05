@@ -9,7 +9,7 @@ public class Book {
     protected float price;
     protected String descrip;
 
-    public void Book (int bookId, int catId, String ISBN, String title, String author, float price; String descrip) {
+    public void Book (int bookId, int catId, String ISBN, String title, String author, float price, String descrip) {
         this.bookId = bookId;
         this.catId = catId;
         this.ISBN = ISBN;
