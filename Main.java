@@ -44,6 +44,7 @@ public class Main {
                                 System.out.println("\n Press a category ID to view books in that genre: ");
                                 int cat_ID = scanner.nextInt();
                                 dao.showBooksByCatId(cat_ID);
+                                System.out.println("Press a book ID to view books details: ");
                                 break;
                             case 2:
                                 break;
