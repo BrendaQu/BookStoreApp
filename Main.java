@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Welcome to our bookstore!");
             System.out.println("Press 1: User Login");
             System.out.println("Press 2: Register Account");
-            System.out.println("Press 2: Exit Bookstore \n");
+            System.out.println("Press 3: Exit Bookstore \n");
 
             int loginType = scanner.nextInt();
             scanner.nextLine();
