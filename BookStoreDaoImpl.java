@@ -54,18 +54,12 @@ public class BookStoreDaoImpl implements BookStoreDao{
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
         while (resultSet.next()){
-            System.out.println("Book ID: " + resultSet.getInt(1) + " Title: " + resultSet.getString(4));
+            System.out.println("Book ID: " + resultSet.getInt(1) + " Title: " + resultSet.getString(4) + " Author: " + resultSet.getString(5) + " ISBN: " + resultSet.getString(3));
         }
     }
 
     @Override
     public void showBookDetails(int bookId) throws SQLException {
-        String sql = "select bookId, title, author, ISBN from books where catId = '" + bookId + "'";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(sql);
-        while (resultSet.next()) {
-            System.out.println("Book ID: " + resultSet.getInt(1) + " Title: " + resultSet.getString(4) + " Author: " + resultSet.getString(5) + " ISBN: " + resultSet.getString(3));
-        }
     }
 
     @Override

@@ -45,6 +45,9 @@ public class Main {
                                 int cat_ID = scanner.nextInt();
                                 dao.showBooksByCatId(cat_ID);
                                 System.out.println("Press a book ID to view books details: ");
+                                int book_ID = scanner.nextInt();
+                                scanner.nextLine();
+                                dao.showBookDetails(book_ID);
                                 break;
                             case 2:
                                 break;
