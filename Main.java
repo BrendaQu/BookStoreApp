@@ -31,7 +31,7 @@ public class Main {
                     System.out.println("Welcome " + user.getUsername() + "! \n");
                     while(user_portal) {
                         //User Main Menu
-                        System.out.println("\n User Menu: ");
+                        System.out.println("\nUser Menu: ");
                         System.out.println("Press 1: View all book categories");
                         System.out.println("Press 2: View Cart");
                         System.out.println("Press 3: Logout");
