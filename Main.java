@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws SQLException {
-	// write your code here
+        // write your code here
         BookStoreDao dao = BookStoreDaoFactory.getBookStoreDao();
         Scanner scanner = new Scanner(System.in);
         boolean login_menu = true;
-        while(login_menu) {
+        while (login_menu) {
             //Login Menu
             System.out.println("Welcome to our bookstore!");
             System.out.println("Press 1: User Login");
@@ -29,7 +29,7 @@ public class Main {
                     String password = scanner.nextLine();
                     User user = dao.getUserLogin(username, password);
                     System.out.println("Welcome " + user.getUsername() + "! \n");
-                    while(user_portal) {
+                    while (user_portal) {
                         //User Main Menu
                         System.out.println("\nUser Menu: ");
                         System.out.println("Press 1: View all book categories");
@@ -75,6 +75,5 @@ public class Main {
                     System.out.println("Please select 1 or 2.");
             }
         }
-
     }
 }

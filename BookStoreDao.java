@@ -1,6 +1,5 @@
 package com.company;
 
-
 import java.sql.SQLException;
 
 public interface BookStoreDao {
@@ -19,15 +18,9 @@ public interface BookStoreDao {
     //Book Info
     void showBookDetails(int bookId) throws SQLException;
 
-    //Add Book to shopping cart
-    void addShopCart(int bookId, int userId);
-
-    //View cart
-    void viewCart(int userId);
-
-    //Cancel Book in cart, delete in table
-    void cancelBook(int userId, int bookId);
-
+    void addShopCart(int bookId, int userId) throws SQLException;
+    void viewCart(int userId) throws SQLException;
+    void cancelBook(int cartId) throws SQLException;
 
 
 }
