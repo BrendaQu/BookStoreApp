@@ -1,32 +1,35 @@
-package com.fhw.ProjectBookstore;
+
+
+import java.sql.SQLException;
+import java.util.Scanner;
 
 public class User {
     protected int userId;
     protected String username;
     protected String password;
 
-    public void User(){
-
+    public User() {
     }
-    public void User(int userId, String username, String password){
+
+    public User( int userId, String username, String password){
         this.userId = userId;
         this.username = username;
         this.password = password;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId( int userId){
+        this.userId = userId;
+    }
+
+    public void setUsername(String username){
         this.username = username;
     }
 
@@ -34,7 +37,34 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password){
         this.password = password;
+    }
+
+    public static User userLogin() throws SQLException {
+        BookStoreDao dao = BookStoreDaoFactory.getBookStoreDao();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter your login information: ");
+        System.out.println("Username: ");
+        String username = scanner.nextLine();
+        System.out.println("Password: ");
+        String password = scanner.nextLine();
+        User user = dao.getUserLogin(username, password);
+        System.out.println("Welcome " + user.getUsername() + "! \n");
+        return user;
+
+    }
+
+    public static void registerNewUser() throws SQLException {
+        BookStoreDao dao = BookStoreDaoFactory.getBookStoreDao();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Register Below: ");
+        System.out.println("Username: ");
+        String n_username = scanner.nextLine();
+        System.out.println("Password: ");
+        String n_password = scanner.nextLine();
+        dao.registerUser(n_username, n_password);
     }
 }
